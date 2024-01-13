@@ -1,7 +1,7 @@
 const routes = require('express').Router()
-const helloController = require('../controllers/hello')
+const helloController = require('../controllers/users')
 
-routes.get("/", helloController)
+routes.use("/users", require('./users'))
 
 module.exports = routes
 
