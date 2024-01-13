@@ -1,0 +1,13 @@
+// LOCALHOST
+Get All Users
+http://localhost:8080/
+
+Get Single User
+http://localhost:8080/65a252c2c63717f07116997a
+
+// PRODUCTION
+Get All Users
+https://cse342-1-2.onrender.com/
+
+Get Single User
+https://cse342-1-2.onrender.com/65a252c2c63717f07116997a
