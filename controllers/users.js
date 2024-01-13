@@ -15,8 +15,7 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   const userId = req.params.id;
-
-  // Check if userId is a valid ObjectId
+    
   if (!ObjectId.isValid(userId)) {
     return res.status(400).json({ error: "Invalid user ID" });
   }
