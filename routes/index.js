@@ -1,6 +1,12 @@
-const routes = require('express').Router()
+const router = require('express').Router()
+const path = require("path");
 
-routes.use("/", require('./users'))
+router.get("/", (req, res) => {
+  const indexPath = path.join(__dirname, "..", "index.html");
+  res.sendFile(indexPath);
+});
 
-module.exports = routes
+router.use("/", require('./users'))
+
+module.exports = router
 
