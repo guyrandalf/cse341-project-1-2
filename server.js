@@ -1,14 +1,25 @@
 const express = require("express");
+const dotenv = require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
+
+
+app.set("view engine", "ejs");
 
 const mongodb = require("./database");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger.json");
 
-const PORT = process.env.port || 8080;
+const PORT = process.env.PORT || 8080;
+
+app.get("/", (req, res) => {
+  res.render("index.ejs", {
+    pageTitle: "Randalf Home",
+    url: process.env.APP_URL,
+  });
+});
 
 app
   .use(bodyParser.json())
